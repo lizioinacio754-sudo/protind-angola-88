@@ -18,7 +18,7 @@ export const Route = createFileRoute("/mapa")({
 const contorno = "M85,25 L115,20 L110,60 L80,62 Z M110,75 L165,72 L215,85 L250,110 L300,105 L330,100 L345,125 L375,170 L380,240 L400,245 L410,320 L355,330 L345,440 L240,445 L200,455 L140,450 L90,445 L95,400 L115,340 L105,300 L130,250 L135,210 L115,185 L120,140 Z";
 
 function Mapa() {
-  const [sel, setSel] = useState(provincias[0]);
+  const [sel, setSel] = useState(provincias[0]!);
   return (
     <>
       <PageTitle title="Mapa de Angola" subtitle="Representação esquemática das 18 províncias — toque num ponto para ver detalhes." />

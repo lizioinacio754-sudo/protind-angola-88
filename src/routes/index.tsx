@@ -95,4 +95,3 @@ function Index() {
   );
 }
 
-export { PageTitle };
