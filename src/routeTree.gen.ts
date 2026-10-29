@@ -10,33 +10,91 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as IaRouteImport } from './routes/ia'
+import { Route as MapaRouteImport } from './routes/mapa'
+import { Route as OcorrenciasRouteImport } from './routes/ocorrencias'
+import { Route as ProjetosRouteImport } from './routes/projetos'
+import { Route as ProvinciasRouteImport } from './routes/provincias'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const IaRoute = IaRouteImport.update({
+  id: '/ia',
+  path: '/ia',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MapaRoute = MapaRouteImport.update({
+  id: '/mapa',
+  path: '/mapa',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OcorrenciasRoute = OcorrenciasRouteImport.update({
+  id: '/ocorrencias',
+  path: '/ocorrencias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjetosRoute = ProjetosRouteImport.update({
+  id: '/projetos',
+  path: '/projetos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProvinciasRoute = ProvinciasRouteImport.update({
+  id: '/provincias',
+  path: '/provincias',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ia': typeof IaRoute
+  '/mapa': typeof MapaRoute
+  '/ocorrencias': typeof OcorrenciasRoute
+  '/projetos': typeof ProjetosRoute
+  '/provincias': typeof ProvinciasRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ia': typeof IaRoute
+  '/mapa': typeof MapaRoute
+  '/ocorrencias': typeof OcorrenciasRoute
+  '/projetos': typeof ProjetosRoute
+  '/provincias': typeof ProvinciasRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ia': typeof IaRoute
+  '/mapa': typeof MapaRoute
+  '/ocorrencias': typeof OcorrenciasRoute
+  '/projetos': typeof ProjetosRoute
+  '/provincias': typeof ProvinciasRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    '/' | '/ia' | '/mapa' | '/ocorrencias' | '/projetos' | '/provincias'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/ia' | '/mapa' | '/ocorrencias' | '/projetos' | '/provincias'
+  id:
+    | '__root__'
+    | '/'
+    | '/ia'
+    | '/mapa'
+    | '/ocorrencias'
+    | '/projetos'
+    | '/provincias'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  IaRoute: typeof IaRoute
+  MapaRoute: typeof MapaRoute
+  OcorrenciasRoute: typeof OcorrenciasRoute
+  ProjetosRoute: typeof ProjetosRoute
+  ProvinciasRoute: typeof ProvinciasRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +106,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ia': {
+      id: '/ia'
+      path: '/ia'
+      fullPath: '/ia'
+      preLoaderRoute: typeof IaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mapa': {
+      id: '/mapa'
+      path: '/mapa'
+      fullPath: '/mapa'
+      preLoaderRoute: typeof MapaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ocorrencias': {
+      id: '/ocorrencias'
+      path: '/ocorrencias'
+      fullPath: '/ocorrencias'
+      preLoaderRoute: typeof OcorrenciasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projetos': {
+      id: '/projetos'
+      path: '/projetos'
+      fullPath: '/projetos'
+      preLoaderRoute: typeof ProjetosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/provincias': {
+      id: '/provincias'
+      path: '/provincias'
+      fullPath: '/provincias'
+      preLoaderRoute: typeof ProvinciasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  IaRoute: IaRoute,
+  MapaRoute: MapaRoute,
+  OcorrenciasRoute: OcorrenciasRoute,
+  ProjetosRoute: ProjetosRoute,
+  ProvinciasRoute: ProvinciasRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

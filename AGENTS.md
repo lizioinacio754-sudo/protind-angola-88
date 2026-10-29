@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- UI-only demo: all data lives in src/lib/demo-data.ts; no DB connection yet (user has an existing Neon DB that must not be altered).
+- App shell (sidebar + header) is AppShell wrapped around <Outlet /> in __root.
