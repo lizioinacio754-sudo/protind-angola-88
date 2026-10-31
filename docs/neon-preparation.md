@@ -38,3 +38,15 @@ Não foi criado um `.env` com credenciais. Os segredos futuros são guardados pe
 7. Só com autorização própria, autenticação e permissões verificadas considerar escritas; nenhuma escrita está autorizada nesta preparação.
 
 A protecção CSRF existente é preservada, mas não substitui autenticação/autorização. Não adicionar endpoints públicos de SQL nem inicialização automática da base.
+
+## Verificação de 31 de Outubro de 2026
+
+Comando executado: `bunx vitest run src/test/territory-validation.test.ts src/test/territory-security.test.ts src/test/app-routing.test.tsx`.
+
+- 32 testes de validação passaram: limites, filtros, entradas inválidas e rejeição de campos desconhecidos, incluindo SQL, credenciais e alegações de autorização.
+- 27 testes das consultas e segurança passaram: quatro operações GET, respostas desactivadas, nenhuma chamada a `fetch`/`XMLHttpRequest` com ou sem chaves fictícias, consultas directas desactivadas, bloqueio de escritas e ausência de RPCs de mutação.
+- 1 teste existente de navegação passou. Total: 60 testes, sem falhas. A verificação automática também registou `build OK`.
+
+Os testes das funções usam um adaptador de registo exclusivo dos testes e executam os validadores e handlers reais; não simulam uma sessão autorizada nem comprovam transporte HTTP/RPC, serialização, middleware CSRF ou comportamento publicado. Não foi realizada qualquer chamada ao Neon nem usada uma credencial real.
+
+Antes da ligação real continuam pendentes: autorização separada para ligar e descobrir a estrutura, classificação de acesso público/privado, autenticação/autorização para leituras privadas e verificação das fronteiras de execução e dos ficheiros publicados. Também permanece a lacuna já documentada das exclusões `.env*`/`.dev.vars*`; não guardar credenciais locais até o responsável a resolver. Não foi detectada falha nos testes executados; isto não equivale a uma auditoria de segurança completa.
