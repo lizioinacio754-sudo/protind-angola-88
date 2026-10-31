@@ -11,3 +11,4 @@
 - [ ] Ligar o conector Neon e descobrir a estrutura existente — aguarda autorização separada para ligação e leitura.
 - [ ] Implementar e verificar a primeira leitura real — aguarda descoberta da estrutura e definição de acesso público/privado.
 - [ ] Definir início de sessão e permissões — adiado pelo utilizador; escritas permanecem bloqueadas.
+- [ ] Fase actual: verificar comunicação, exclusões de credenciais e preparar administrador, técnico e utilizador de consulta sem activar acessos ou alterar o visual.
