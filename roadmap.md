@@ -12,3 +12,4 @@
 - [ ] Implementar e verificar a primeira leitura real — aguarda descoberta da estrutura e definição de acesso público/privado.
 - [ ] Definir início de sessão e permissões — adiado pelo utilizador; escritas permanecem bloqueadas.
 - [ ] Fase actual: verificar comunicação, exclusões de credenciais e preparar administrador, técnico e utilizador de consulta sem activar acessos ou alterar o visual.
+- [ ] Retomar a análise interrompida: ler resultados do scanner, verificar credenciais, API, três perfis e bloqueio de escritas; não publicar nem ligar ao Neon.
