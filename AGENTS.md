@@ -16,3 +16,4 @@
 - Integrate Neon only through its managed connector with request-time server-only secrets; no direct PostgreSQL client or browser credentials because the connector owns the connection string.
 - Do not expose mutation RPCs until verified server-side authentication, authorization and explicit mutation approval exist; the write guard remains unconditional meanwhile.
 - Territorial RPC unit tests use a test-only registration adapter with real validators and handlers; keep transport/CSRF/deployment verification separate because unit coverage does not prove those boundaries.
+- Access contracts describe inactive role names only, never authority; persist future role assignments separately from profiles and verify them server-side after authentication.
