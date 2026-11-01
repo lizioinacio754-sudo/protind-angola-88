@@ -7,9 +7,11 @@
 - [x] Preparar as quatro consultas internas, validação e acesso desactivado ao Neon.
 - [x] Retomar a verificação: confirmar o código preparado, executar o teste existente e abrir as seis páginas.
 - [x] Adicionar e executar testes das quatro consultas e de segurança: 59 testes específicos e 1 de navegação passaram; sem ligação ao Neon, escritas ou substituição dos dados demonstrativos.
-- [ ] Verificar transporte RPC, protecção CSRF e ausência de segredos nos ficheiros publicados — testes unitários não comprovam estas fronteiras.
+- [x] Verificar a cadeia CSRF real: 20 testes de pedidos GET/POST passaram.
+- [ ] Verificar transporte RPC e ficheiros na aplicação publicada — não existe publicação e o utilizador proibiu publicar.
+- [ ] Completar exclusões `.env*` e `.dev.vars*` — `.gitignore` protegido contra edição neste ambiente; responsável deve actualizar fora daqui.
 - [ ] Ligar o conector Neon e descobrir a estrutura existente — aguarda autorização separada para ligação e leitura.
 - [ ] Implementar e verificar a primeira leitura real — aguarda descoberta da estrutura e definição de acesso público/privado.
 - [ ] Definir início de sessão e permissões — adiado pelo utilizador; escritas permanecem bloqueadas.
-- [ ] Fase actual: verificar comunicação, exclusões de credenciais e preparar administrador, técnico e utilizador de consulta sem activar acessos ou alterar o visual.
-- [ ] Retomar a análise interrompida: ler resultados do scanner, verificar credenciais, API, três perfis e bloqueio de escritas; não publicar nem ligar ao Neon.
+- [x] Preparar catálogo inactivo de administrador, técnico e utilizador de consulta; 7 testes passaram, sem atribuir permissões.
+- [x] Retomar análise: scanner anterior sem achados mas marcado desactualizado; 87 testes passaram e seis páginas demonstrativas verificadas sem alterações de visual/dados.
