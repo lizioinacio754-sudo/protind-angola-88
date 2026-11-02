@@ -60,3 +60,47 @@ Antes da ligação real continuam pendentes: autorização separada para ligar e
 - Não existem ficheiros `.env*`/`.dev.vars*` versionados no estado actual, por verificação apenas de nomes. Não foram lidos valores secretos nem auditado todo o histórico. `.env`, `.env.production` e `.dev.vars.production` continuam sem exclusão; a tentativa de adicionar `.env*`/`.dev.vars*` foi recusada porque `.gitignore` é protegido. O responsável deve acrescentar essas regras fora deste ambiente antes de guardar credenciais locais.
 - Seis páginas abriram com HTTP 200, aviso demonstrativo e sem erros de execução observados. Nenhum ficheiro de páginas, visual ou dados demonstrativos foi alterado nesta retoma. O Neon não foi ligado, consultado ou modificado; nenhuma operação de escrita foi activada.
 - Não existe aplicação publicada; publicação foi expressamente proibida. Verificação de transporte RPC e ficheiros publicados, identidade real, autorização e primeira leitura real continuam pendentes.
+
+## Protecção local — 1 de Novembro de 2026
+
+- Nova tentativa de editar `.gitignore` recusada pelo ambiente como ficheiro protegido, apesar de a verificação de permissões do sistema o indicar gravável. Não foi contornada essa protecção nem eliminado qualquer ficheiro.
+- `git check-ignore` confirma que `.env.local` e `.dev.vars` estão excluídos, mas `.env`, `.env.production`, `.dev.vars.production`, variantes em subdirectórios, chaves privadas e ficheiros comuns de credenciais não estão protegidos pelas regras actuais.
+- Não foram encontrados ficheiros locais ou versionados com os nomes/tipos de credenciais pesquisados. A pesquisa limitada no código e nos 26 commits locais alcançáveis não identificou credenciais reais nos padrões verificados. Os valores fictícios dos testes não são credenciais reais. Esta pesquisa não cobre todos os formatos, objectos Git inalcançáveis ou referências remotas.
+- O GitHub não foi consultado: não é possível confirmar ausência de segredos nos seus ramos, histórico ou outros conteúdos apenas com o repositório local. Não foi efectuado `fetch`, publicação ou acesso à base de dados.
+- Os 87 testes existentes passaram novamente; verificação automática registou `build OK`. Consultas permanecem desactivadas, perfis inactivos e escritas bloqueadas. Nenhuma alteração aos ficheiros das páginas, componentes, estilos, dados demonstrativos ou funções territoriais foi detectada nesta tarefa.
+
+### Exclusões a aplicar fora deste ambiente
+
+O responsável deve acrescentar as regras seguintes ao `.gitignore` através de um editor autorizado do repositório, antes de guardar credenciais locais. Não criar ficheiros secretos para testar as regras.
+
+```gitignore
+# Local environment files and private credentials (all directories)
+.env
+.env.*
+.dev.vars
+.dev.vars.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+credentials.json
+credentials.*.json
+service-account*.json
+secrets.json
+secrets.*.json
+.secrets/
+.credentials/
+.aws/
+.ssh/
+
+# Only sanitised templates may be versioned
+!.env.example
+!.env.sample
+!.env.template
+!.dev.vars.example
+!.dev.vars.sample
+!.dev.vars.template
+```
+
+Rever os nomes de outros ficheiros reais usados pela equipa e acrescentar exclusões específicas. Os modelos permitidos devem conter apenas campos vazios ou exemplos sem credenciais. Verificar as regras com `git check-ignore --no-index` e confirmar apenas os nomes de ficheiros versionados com `git ls-files`; nunca imprimir valores secretos. Ignorar um ficheiro não remove cópias já versionadas nem protege valores enviados ao navegador. Se uma auditoria autorizada do GitHub identificar uma credencial real, revogá-la/rodá-la no serviço emissor e definir separadamente a remoção segura do histórico, sem apagar ficheiros ou reescrever histórico nesta tarefa.

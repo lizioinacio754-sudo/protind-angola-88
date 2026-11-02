@@ -10,7 +10,8 @@
 - [x] Verificar a cadeia CSRF real: 20 testes de pedidos GET/POST passaram.
 - [ ] Verificar transporte RPC e ficheiros na aplicação publicada — não existe publicação e o utilizador proibiu publicar.
 - [ ] Completar exclusões `.env*` e `.dev.vars*` — `.gitignore` protegido contra edição neste ambiente; responsável deve actualizar fora daqui.
-- [ ] Retomar protecção local: verificar exposição no código/Git e documentar exclusões de credenciais em falta, sem apagar ficheiros.
+- [x] Retomar protecção local: 87 testes passaram; pesquisa limitada sem credenciais reais identificadas no código e em 26 commits locais; exclusões em falta documentadas, sem apagar ficheiros ou alterar visual/dados.
+- [ ] Verificar segredos no GitHub — acesso remoto não verificado; pesquisa local não certifica ramos/histórico remotos.
 - [ ] Ligar o conector Neon e descobrir a estrutura existente — aguarda autorização separada para ligação e leitura.
 - [ ] Implementar e verificar a primeira leitura real — aguarda descoberta da estrutura e definição de acesso público/privado.
 - [ ] Definir início de sessão e permissões — adiado pelo utilizador; escritas permanecem bloqueadas.
