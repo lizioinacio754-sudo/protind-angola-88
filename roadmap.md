@@ -1,6 +1,8 @@
 # PROTIND — preparação do backend
 
-- [ ] Propor estrutura funcional para ordenamento industrial sustentável, enquetes e avaliação ambiental, com foco em Benguela; aguardar confirmação antes de executar alterações no Neon.
+- [x] Propor estrutura funcional para ordenamento industrial sustentável, enquetes e avaliação ambiental, com foco em Benguela; aprovada como base, sujeita a revisão técnica.
+- [ ] Preparar SQL completo e explicação por etapas, com integridade, índices e permissões mínimas; não executar no Neon nem alterar a interface.
+- [ ] Reconfirmar associação do conector ao projecto e identidade técnica da base; confirmação do ambiente correcto depende do responsável.
 - [x] Verificar ligações Neon disponíveis e identificar tabelas existentes por consulta de metadados, sem ligar a aplicação nem alterar dados: duas ligações apontam ao mesmo endpoint/base; nove tabelas em neon_auth, nenhuma tabela funcional visível nesta base.
 
 - [x] Analisar a estrutura actual e as fronteiras de segurança.
