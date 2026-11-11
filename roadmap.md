@@ -1,7 +1,7 @@
 # PROTIND — preparação do backend
 
 - [x] Propor estrutura funcional para ordenamento industrial sustentável, enquetes e avaliação ambiental, com foco em Benguela; aprovada como base, sujeita a revisão técnica.
-- [ ] Preparar SQL completo e explicação por etapas, com integridade, índices e permissões mínimas; não executar no Neon nem alterar a interface.
+- [x] Preparar e validar o SQL completo com explicação por etapas: 29 tabelas, 168 índices, 18 gatilhos, 14 funções, 115 FKs e 303 CHECKs validados em PostgreSQL 17 local temporário; 11 regras de integridade testadas com casos válidos e inválidos; corrigido CASE sem parênteses em validar_hierarquia; não executado no Neon nem alterada a interface.
 - [ ] Reconfirmar associação do conector ao projecto e identidade técnica da base; confirmação do ambiente correcto depende do responsável.
 - [x] Verificar ligações Neon disponíveis e identificar tabelas existentes por consulta de metadados, sem ligar a aplicação nem alterar dados: duas ligações apontam ao mesmo endpoint/base; nove tabelas em neon_auth, nenhuma tabela funcional visível nesta base.
 
