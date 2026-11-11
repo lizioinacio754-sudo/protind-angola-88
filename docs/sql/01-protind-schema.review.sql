@@ -770,7 +770,7 @@ BEGIN
     END IF;
   ELSE
     SELECT tipo INTO pai_tipo FROM protind.unidades_territoriais WHERE id = NEW.unidade_pai_id FOR UPDATE;
-    IF pai_tipo IS DISTINCT FROM CASE NEW.tipo WHEN 'municipio' THEN 'provincia' ELSE 'municipio' END THEN
+    IF pai_tipo IS DISTINCT FROM (CASE NEW.tipo WHEN 'municipio' THEN 'provincia' ELSE 'municipio' END) THEN
       RAISE EXCEPTION 'Pai incompatível com o tipo territorial' USING ERRCODE = '23514';
     END IF;
   END IF;
