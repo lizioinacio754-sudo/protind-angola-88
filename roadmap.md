@@ -1,5 +1,14 @@
 # PROTIND — preparação do backend
 
+## Autorização final — 16-11-2026
+- [ ] Revalidar neondb e associar a ligação aprovada ao projecto.
+- [ ] Confirmar cópia de segurança ou recuperação no Neon antes de executar a estrutura SQL; depende de acesso às definições de recuperação do Neon.
+- [ ] Executar uma única vez a estrutura validada, preservando neon_auth e sem importar demonstrações.
+- [ ] Configurar identidade existente e acesso mínimo; depende da configuração Neon Auth e conta dedicada, não acessíveis pelo conector SQL.
+- [ ] Integrar módulos reais, participação, administração e relatórios sem misturar dados demonstrativos.
+- [ ] Testar ligação, três níveis de acesso, operações, segurança e apresentação em computador/telemóvel.
+- [ ] Publicar publicamente só após concluir os testes operacionais; produzir relatório único com endereço e limitações.
+
 - [x] Propor estrutura funcional para ordenamento industrial sustentável, enquetes e avaliação ambiental, com foco em Benguela; aprovada como base, sujeita a revisão técnica.
 - [x] Preparar e validar o SQL completo com explicação por etapas: 29 tabelas, 168 índices, 18 gatilhos, 14 funções, 115 FKs e 303 CHECKs validados em PostgreSQL 17 local temporário; 11 regras de integridade testadas com casos válidos e inválidos; corrigido CASE sem parênteses em validar_hierarquia; não executado no Neon nem alterada a interface.
 - [ ] Reconfirmar associação do conector ao projecto e identidade técnica da base; confirmação do ambiente correcto depende do responsável.
