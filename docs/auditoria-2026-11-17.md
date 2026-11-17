@@ -101,3 +101,31 @@ Os contratos desactivados e a estrutura SQL existentes já são a preparação t
 ## 7. Condições ainda necessárias
 
 São necessários: confirmação de recuperação no Neon; conta de acesso mínimo; configuração pública de Neon Auth e identificação do administrador inicial; fonte territorial oficial; matriz de permissões e privacidade; aprovação específica das próximas alterações. Só depois será possível testar operações reais e preparar publicação. O endereço previsto `angola-verde-viva.lovable.app` não foi validado como aplicação publicada nesta auditoria.
+
+## 8. Conferência das dez etapas e manutenção
+
+Esta auditoria não encerra as dez etapas de implementação do documento enviado. Estado de cada etapa:
+
+| Etapa pedida | Estado |
+|---|---|
+| 1 — Auditoria geral | Estrutura funcional, seis páginas, interacções seleccionadas, metadados e 87 testes conferidos; não equivale a revisão exaustiva de todas as dependências ou de todo o histórico remoto. |
+| 2 — Protecção da base | Identidade e privilégio da ligação confirmados; estratégia preparada; recuperação, conta mínima e concessões ainda dependem do responsável e de aprovação. |
+| 3 — Território | Divergência identificada; hierarquia proposta revista; cadastro real 21/265 e comunas não validados nem importados. |
+| 4 — Autenticação | Preparação desactivada preservada; serviço, sessões, administrador e permissões reais não implementados nem testados. |
+| 5 — Funcionalidades | Pesquisa e submissão demonstrativa verificadas; desflorestação é um tipo ilustrativo de ocorrência, não acompanhamento real; zonas de risco, administração, relatórios e histórico operacional pendentes. |
+| 6 — IA | Exemplos preservados e requisitos de fontes/revisão definidos; nenhuma análise ou modelo real integrado ou testado. |
+| 7 — Interface | Seis páginas verificadas em computador e telemóvel; pesquisa, formulário e menu exercitados; faltas de validação e acessibilidade documentadas. Não há selector de tema ou segundo tema operacional configurado na aplicação. |
+| 8 — Testes | 87 testes passaram e verificações de navegador descritas; autenticação, permissões, consultas reais, operações administrativas e integridade de dados reais continuam não verificáveis no estado actual. |
+| 9 — Publicação | Bloqueada pelos requisitos acima e por nova aprovação; desempenho de produção, carga e recuperação não foram medidos. |
+| 10 — Relatório | Entregue com evidências, limitações, pendências e condições de continuação, sem declarar concluídas etapas bloqueadas. |
+
+### Plano de manutenção proposto, ainda sem responsável ou calendário aprovado
+
+- Designar responsáveis por acessos, dados territoriais, incidentes e recuperação.
+- Rever alterações de dependências e segurança antes de cada publicação; repetir análise após a integração real, não usar resultados desactualizados como certificação.
+- Confirmar periodicamente a recuperação e exercitar reposição num ambiente isolado aprovado; frequência depende de acordo com o responsável.
+- Monitorizar falhas de início de sessão, operações autorizadas, erros de consultas e qualidade dos dados sem registar tokens, palavras-passe ou respostas privadas integrais.
+- Rever fontes territoriais, vigência e qualidade ambiental; manter alterações rastreáveis e separar demonstração de dados oficiais.
+- Medir desempenho e carga com dados e ambiente aprovados; definir metas antes de declarar aptidão para produção.
+
+Nenhuma destas propostas autoriza execução na base, novas contas, activação de escritas ou publicação.
