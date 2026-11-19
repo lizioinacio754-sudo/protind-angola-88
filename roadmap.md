@@ -1,5 +1,12 @@
 # PROTIND — preparação do backend
 
+## Preparação operacional — documento de 17-11-2026
+- [ ] Verificar acesso a listagem de branches, backups e recuperação Neon sem credenciais; se indisponível, documentar limite e procedimento seguro solicitado em 19-11-2026.
+- [x] Preparar contratos de entrada de ocorrências e projectos com testes, sem RPCs de escrita nem alteração das páginas: 26 novos testes e 87 anteriores passaram (113 total).
+- [x] Documentar divergências do SQL e procedimento manual de recuperação/acesso mínimo em docs/preparacao-operacional.md; nenhuma alteração SQL executada.
+- [ ] Rever migração versionada e campos divergentes para aprovação; depende de confirmação da recuperação e matriz de acesso antes de execução.
+- [ ] Confirmar recuperação testada, conta sem BYPASSRLS, configuração pública Neon Auth e administrador inicial; aguarda intervenção do responsável.
+
 ## Auditoria e continuidade — 17-11-2026
 - [x] Auditar páginas, interacções, testes, ligação Neon, metadados e protecção local; relatório em docs/auditoria-2026-11-17.md: 87 testes passaram, seis páginas e pesquisa/formulário/menu verificados nos dois tamanhos; esquema protind ausente.
 - [x] Preparar sequência e riscos das próximas etapas, sem executar alterações na base, activar escritas, criar administradores ou publicar sem nova aprovação.
